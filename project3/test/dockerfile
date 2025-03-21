@@ -1,0 +1,14 @@
+# Base image
+FROM python:3.8-slim
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y libgl1-mesa-glx libglib2.0-0 && apt-get clean
+
+# Copy the handler file
+COPY test_handler.py /var/task/
+
+# Set working directory
+WORKDIR /var/task
+
+# Set CMD to invoke the handler
+CMD ["test_handler.lambda_handler"]

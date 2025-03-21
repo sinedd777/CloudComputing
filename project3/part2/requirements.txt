@@ -1,0 +1,8 @@
+boto3
+facenet-pytorch
+imutils
+numpy
+opencv-python-headless
+Pillow
+torch
+torchvision
